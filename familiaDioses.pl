@@ -43,10 +43,10 @@ esDecendienteDirecto(hermes,atena).
 esPadreDe(Padre, Hijo):-esHombre(Padre), esDecendienteDirecto(Hijo, Padre).
 esMadreDe(Madre, Hijo):-esMujer(Madre), esDecendienteDirecto(Hijo, Madre).
 esHermanoDe(Hermano1, Hermano2) :-esPadreDe(Padre, Hermano1), esPadreDe(Padre, Hermano2).
-esAbueloDe(Abuelo, Nieto):-esDecendienteDirecto(Hijo, Padre), esDecendienteDirecto(Padre, Abuelo), esHombre(Abuelo).
+esAbueloDe(Abuelo, Nieto) :-esDecendienteDirecto(Nieto, Padre), esDecendienteDirecto(Padre, Abuelo), esHombre(Abuelo).
+
 esAbuelaDe(Abuela, Nieto) :-esDecendienteDirecto(Nieto, Padre), esDecendienteDirecto(Padre, Abuela), esMujer(Abuela).
 
-esAncestroDe(Ancestro, Descendiente):-esPadreDe(Ancestro, Descendiente), esMadreDe(Ancestro, Descendiente).
-esAncestroDe(Ancestro, Descendiente):- esPadreDe(Padre, Descendiente), esAncestroDe(Ancestro, Padre); esMadreDe(Madre, Descendiente), esAncestroDe(Ancestro, Madre).
+esAncestroDe(Ancestro, Persona) :-esDecendienteDirecto(Persona, Ancestro), esHombre(Ancestro).
 
-esAncestroDe(Ancestro, Descendiente) :- esPadreDe(Ancestro, Descendiente); esMadreDe(Ancestro, Descendiente).
+esAncestroDe(Ancestro, Persona) :-esDecendienteDirecto(Persona, Padre), esAncestroDe(Ancestro, Padre).
