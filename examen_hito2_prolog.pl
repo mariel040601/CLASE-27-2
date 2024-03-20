@@ -54,6 +54,13 @@ esMarcaPatito(destruinator500).
 
 
 productoColor(samsungb125, negro).
+productoColor(samsungl200, negro).
+productoColor(bose, negro).
+productoColor(ps2, negro).
+productoColor(ps3, negro).
+productoColor(lg510, blanco).
+productoColor(bose, blanco).
+
 
 % --------------------------------------------------------
 %Características de los productos
