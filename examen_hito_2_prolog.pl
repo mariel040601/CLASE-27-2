@@ -94,15 +94,16 @@ productosEntretenimiento(X) :- esEntretenimiento(_), productosEntretenimiento(X)
 productosComputadoras(X) :- esComputadoras(X).
 productosComputadoras(X) :- esComputadoras(_), productosComputadoras(X).
 
+recomendar(juana, Producto) :- esCaro(Producto), esNegro(Producto),  esEntretenimiento(Producto).
+recomendar(juana, Producto) :- esPlateado(Producto), esBueno(Producto), esComputadoras(Producto).
+recomendar(juana, Producto) :- esBarato(Producto), esProducto(Producto).
 
-recomendar(juana, X) :- esCaro(X), esNegro(X), esEntretenimiento(X). 
-recomendar(juana, Y) :- esPlateado(Y), esBueno(Y), esComputadoras(Y). 
-recomendar(juana , Y) :- esBarato(Y), esProducto(Y).
+recomendar(maria, Producto) :- esVerde(Producto), esProducto(Producto).
+recomendar(maria, Producto) :- esBlanco(Producto), esBarato(Producto), esEntretenimiento(Producto).
+recomendar(maria, Producto) :- esRojo(Producto), esMalo(Producto), esElectrodomestico(Producto).
+recomendar(maria, Producto) :- esCaro(Producto), esProducto(Producto).
 
-recomendar(maria, X) :- esVerde(X), esProducto(X).
-recomendar(maria, Z) :- esBlanco(Z), esBarato(Z), esEntretenimiento(Z).
-recomendar(maria, A) :- esRojo(A), esMalo(A), esElectrodomestico(A).
-recomendar(maria, B) :- esCaro(B), esProducto(B).
+recomendar(jeremias, Producto) :- esBueno(Producto), esCaro(Producto), esElectrodomestico(Producto).
+recomendar(jeremias, Producto) :-  esBarato(Producto), esBueno(Producto), esProducto(Producto).
 
-recomendar(jeremias, C) :- esBueno(C), esCaro(C), esElectrodomestico(C).
-recomendar(jeremias, D) :- esBarato(D), esBueno(D), esProducto(D).
+
