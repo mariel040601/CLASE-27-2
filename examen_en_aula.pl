@@ -26,3 +26,9 @@ estaEnCategoria(parlantes, entretenimiento).
 esProductoDentroDeCategoria(Producto, Categoria):- esProducto(Producto), esCategoria(Categoria), estaEnCategoria(Producto, Categoria).
 esProductoDentroDeCategoria(Producto, Categoria):- estaEnCategoria(Categoria2,Categoria), esProductoDentroDeCategoria(Producto, Categoria).
 
+esBlanco(lg510).
+esBarato(lg510)
+esBueno(lg510).
+
+recomendarMaria(Producto):- esProducto(Producto), esVerde(Producto), esProductoDentroDeCategoria(Producto, producto).
+
